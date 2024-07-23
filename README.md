@@ -93,16 +93,20 @@ Config.BASE_URL; // 'https://myapi.com'
 Config.APP_NAME; // 'abc'
 ```
 
-# Troubleshooting
+# Build Scripts
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+Configure build scripts in your `package.json`:
+
+```bash
+"scripts": {
+  "start": "react-native start",
+  "android": "react-native run-android",
+  "ios": "react-native run-ios",
+  "build:saas": "ENVFILE=.env react-native run-android",
+  "build:whitelabel": "ENVFILE=.env.whitelabel react-native run-android"
+}
+```
 
 # Learn More
 
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This setup provides a solid foundation for building a React Native application that supports both SAAS and White Labeling within a single codebase. You can further extend this approach to include more customization options and handle more complex requirements as needed.
