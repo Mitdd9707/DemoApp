@@ -3,11 +3,12 @@ import ScreenTemplate from '@templates/ScreenTemplate/ScreenTemplate';
 import {Spacer} from '@atoms/common/common.styles';
 import LoginForm from '@organisms/LoginForm/LoginForm';
 import {useAuthNavigation} from '@navigation/hooks';
-import {LoginFormData} from './LoginScreen.props';
-import {Container, Welcometext} from './LoginScreen.styles';
+import {LoginFormData} from './Login.props';
+import {Container, LogoView, Welcometext} from './Login.styles';
 import Config from 'react-native-config';
+import {Image} from 'react-native';
 
-const LoginScreen = () => {
+const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigation = useAuthNavigation();
 
@@ -42,7 +43,9 @@ const LoginScreen = () => {
     <ScreenTemplate>
       <Container>
         <Spacer size={50} />
-        <Welcometext>Welcome {Config.APP_NAME}</Welcometext>
+        <LogoView source={{uri: Config.LOGO_URL}} resizeMode="cover" />
+        <Spacer size={20} />
+        <Welcometext>{Config.APP_NAME}</Welcometext>
         <Spacer size={50} />
         <LoginForm onSubmit={onLoginPress} isloading={loading} />
       </Container>
@@ -50,4 +53,4 @@ const LoginScreen = () => {
   );
 };
 
-export default LoginScreen;
+export default Login;

@@ -7,6 +7,7 @@ import {
   TextInputField,
 } from './LoginForm.styles';
 import Button from '@atoms/Button/Button';
+import {Spacer} from '@atoms/common/common.styles';
 
 const LoginForm = ({
   onSubmit,
@@ -51,6 +52,7 @@ const LoginForm = ({
           {touched.password && errors.password && (
             <ErrorText>{errors.password}</ErrorText>
           )}
+          <Spacer size={10} />
           <Button loading={isloading} onPress={handleSubmit}>
             Login
           </Button>

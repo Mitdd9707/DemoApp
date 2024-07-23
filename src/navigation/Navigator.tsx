@@ -3,9 +3,9 @@ import {StatusBar} from 'react-native';
 import {NavigationContainer, Theme} from '@react-navigation/native';
 import {AuthStack} from './hooks';
 import Loader from '@atoms/Loader/Loader';
-import LoginScreen from '@screens/LoginScreen/LoginScreen';
 import Home from '@screens/Home/Home';
 import Config from 'react-native-config';
+import Login from '@screens/Login/Login';
 
 interface NavigatorProps {
   theme?: Theme;
@@ -22,7 +22,7 @@ const Navigator: React.FC<NavigatorProps> = ({theme}) => {
     <AuthStack.Navigator initialRouteName="Login">
       <AuthStack.Screen
         name="Login"
-        component={LoginScreen}
+        component={Login}
         options={{
           header: () => null,
         }}

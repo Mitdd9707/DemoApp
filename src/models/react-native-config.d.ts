@@ -4,6 +4,7 @@ declare module 'react-native-config' {
     BASE_URL?: string;
     LOGO_URL?: string;
     THEME?: string;
+    AVTAR?: string;
   }
 
   export const Config: NativeConfig;

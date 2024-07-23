@@ -9,10 +9,10 @@ import {
   LabelText,
 } from './Home.styles';
 import {TextInputField} from '@organisms/LoginForm/LoginForm.styles';
+import Config from 'react-native-config';
 
 const Home = (props: {route: {params: any}}) => {
   const params = props.route.params.param;
-  console.log('props.route.params', params);
 
   // eslint-disable-next-line react/no-unstable-nested-components
   const RenderlabelList = (value: any) => {
@@ -34,7 +34,7 @@ const Home = (props: {route: {params: any}}) => {
       <HomeContainer>
         <AppNameView>
           <ImageView>
-            <Images source={{uri: params?.image}} resizeMode="contain" />
+            <Images source={{uri: Config.AVTAR}} resizeMode="contain" />
           </ImageView>
           <LabelText>{'Username'}</LabelText>
           {RenderlabelList(params?.username)}
