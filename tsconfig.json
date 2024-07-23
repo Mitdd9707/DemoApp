@@ -1,3 +1,47 @@
 {
+  "compilerOptions": {
+    "moduleResolution": "Bundler",
+    "target": "ES6",
+    "allowUnreachableCode": false,
+    "jsx": "react",
+    "types": ["react-native"],
+    "baseUrl": "./",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "strict": true,
+    "isolatedModules": true,
+    "sourceMap": true,
+    "paths": {
+      "@atoms/*": ["./src/components/atoms/*"],
+      "@molecules/*": ["./src/components/molecules/*"],
+      "@screens/*": ["./src/components/screens/*"],
+      "@organisms/*": ["./src/components/organisms/*"],
+      "@templates/*": ["./src/components/templates/*"],
+      "@navigation/*": ["./src/navigation/*"],
+      "@context/*": ["./src/context/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@containers/*": ["./src/containers/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@assets/*": ["./assets/*"],
+      "@type/*": ["./src/type/*"],
+      "@api/*": ["./src/api/*"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "app.config.js"
+  ],
+  "include": [
+    "./**/*",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "compileOnSave": true,
   "extends": "@react-native/typescript-config/tsconfig.json"
 }

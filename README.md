@@ -2,7 +2,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+> **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
 ## Step 1: Start the Metro Server
 
@@ -64,16 +64,51 @@ You've successfully run and modified your React Native App. :partying_face:
 - If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
 - If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
 
-# Troubleshooting
+# Setup react-native-config
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+Install the package:
+
+```bash
+$ yarn add react-native-config
+```
+
+# Setup Env File Settings
+
+Create a new file .env for SAAS and .env.whiteLabel for White Label in the root of your React Native app:
+
+```bash
+BASE_URL=**********
+APP_NAME=**********
+LOGO_URL=**********
+THEME=**********
+AVTAR=**********
+```
+
+Then access variables defined there from your app:
+
+```bash
+import Config from "react-native-config";
+
+Config.BASE_URL; // 'https://myapi.com'
+Config.APP_NAME; // 'abc'
+```
+
+# Build Scripts
+
+Configure build scripts in your `package.json`:
+
+```bash
+"scripts": {
+   "start": "react-native start",
+   "android": "react-native run-android",
+   "ios": "react-native run-ios",
+   "android:saas": "ENVFILE=.env react-native run-android",
+   "android:whiteLabel": "ENVFILE=.env.whiteLabel react-native run-android",
+   "ios:saas": "ENVFILE=.env xcodebuild -scheme SAAS-DemoAPP -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+   "ios:whitelabel": "ENVFILE=.env.whiteLabel xcodebuild -scheme WHITELABEL-DemoAPP -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+}
+```
 
 # Learn More
 
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This setup provides a solid foundation for building a React Native application that supports both SAAS and White Labeling within a single codebase. You can further extend this approach to include more customization options and handle more complex requirements as needed.
