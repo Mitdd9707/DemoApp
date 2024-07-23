@@ -99,11 +99,13 @@ Configure build scripts in your `package.json`:
 
 ```bash
 "scripts": {
-  "start": "react-native start",
-  "android": "react-native run-android",
-  "ios": "react-native run-ios",
-  "build:saas": "ENVFILE=.env react-native run-android",
-  "build:whitelabel": "ENVFILE=.env.whitelabel react-native run-android"
+   "start": "react-native start",
+   "android": "react-native run-android",
+   "ios": "react-native run-ios",
+   "android:saas": "ENVFILE=.env react-native run-android",
+   "android:whiteLabel": "ENVFILE=.env.whiteLabel react-native run-android",
+   "ios:saas": "ENVFILE=.env xcodebuild -scheme SAAS-DemoAPP -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+   "ios:whitelabel": "ENVFILE=.env.whiteLabel xcodebuild -scheme WHITELABEL-DemoAPP -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
 }
 ```
 
