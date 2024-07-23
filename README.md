@@ -2,7 +2,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+> **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
 ## Step 1: Start the Metro Server
 
@@ -63,6 +63,35 @@ You've successfully run and modified your React Native App. :partying_face:
 
 - If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
 - If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+
+# Setup react-native-config
+
+Install the package:
+
+```bash
+$ yarn add react-native-config
+```
+
+# Setup Env File Settings
+
+Create a new file .env for SAAS and .env.whiteLabel for White Label in the root of your React Native app:
+
+```bash
+BASE_URL=**********
+APP_NAME=**********
+LOGO_URL=**********
+THEME=**********
+AVTAR=**********
+```
+
+Then access variables defined there from your app:
+
+```bash
+import Config from "react-native-config";
+
+Config.BASE_URL; // 'https://myapi.com'
+Config.APP_NAME; // 'abc'
+```
 
 # Troubleshooting
 

@@ -8,10 +8,10 @@
     "test": "jest",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "android-saas": "ENVFILE=.env react-native run-android",
-    "android-whitelabel": "ENVFILE=.env.whiteLabel react-native run-android",
-    "ios-saas": "ENVFILE=.env xcodebuild -scheme MyApp -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
-    "ios-whitelabel": "ENVFILE=.env.whiteLabel xcodebuild -scheme MyApp -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+    "android:saas": "ENVFILE=.env react-native run-android",
+    "android:whiteLabel": "ENVFILE=.env.whiteLabel react-native run-android",
+    "ios:saas": "ENVFILE=.env xcodebuild -scheme MyApp -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+    "ios:whitelabel": "ENVFILE=.env.whiteLabel xcodebuild -scheme MyApp -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
     "bundle:ios": "react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios"
   },
   "dependencies": {
